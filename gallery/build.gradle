@@ -1,0 +1,18 @@
+apply plugin: 'com.android.feature'
+
+android {
+    def androidVersions = rootProject.ext.android
+
+    compileSdkVersion androidVersions.compileSdkVersion
+    buildToolsVersion androidVersions.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion androidVersions.minSdkVersion
+        targetSdkVersion androidVersions.targetSdkVersion
+    }
+}
+
+dependencies {
+    implementation project(':base')
+}

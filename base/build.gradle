@@ -1,0 +1,35 @@
+apply plugin: 'com.android.feature'
+
+android {
+    def androidVersions = rootProject.ext.android
+
+    compileSdkVersion androidVersions.compileSdkVersion
+    buildToolsVersion androidVersions.buildToolsVersion
+
+    baseFeature true
+
+    defaultConfig {
+        minSdkVersion androidVersions.minSdkVersion
+        targetSdkVersion androidVersions.targetSdkVersion
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def commonDependencies = rootProject.ext.commonDependencies
+
+    application project(':app')
+    feature project(":gallery")
+
+    api commonDependencies.supportAppCompatV7
+
+    api commonDependencies.dagger2
+    annotationProcessor commonDependencies.dagger2Compiler
+    testAnnotationProcessor commonDependencies.dagger2Compiler
+}
