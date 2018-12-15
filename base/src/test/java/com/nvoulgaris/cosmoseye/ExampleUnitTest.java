@@ -1,4 +1,4 @@
-package cosmoseye.nvoulgaris.com.base.gallery;
+package com.nvoulgaris.cosmoseye;
 
 import org.junit.Test;
 

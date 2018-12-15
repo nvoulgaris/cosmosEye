@@ -1,4 +1,4 @@
-package cosmoseye.nvoulgaris.com.base.gallery;
+package com.nvoulgaris.cosmoseye;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("cosmoseye.nvoulgaris.com.base.gallery.test", appContext.getPackageName());
+        assertEquals("cosmoseye.nvoulgaris.com.base.test", appContext.getPackageName());
     }
 }

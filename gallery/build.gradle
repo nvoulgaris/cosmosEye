@@ -14,5 +14,11 @@ android {
 }
 
 dependencies {
+    def commonTestDependencies = rootProject.ext.commonTestDependencies
+
     implementation project(':base')
+
+    testImplementation commonTestDependencies.junit
+    testImplementation commonTestDependencies.assertj
+    testImplementation commonTestDependencies.mockito
 }

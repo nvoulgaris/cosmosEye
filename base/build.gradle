@@ -23,6 +23,7 @@ android {
 
 dependencies {
     def commonDependencies = rootProject.ext.commonDependencies
+    def commonTestDependencies = rootProject.ext.commonTestDependencies
 
     application project(':app')
     feature project(":gallery")
@@ -32,4 +33,8 @@ dependencies {
     api commonDependencies.dagger2
     annotationProcessor commonDependencies.dagger2Compiler
     testAnnotationProcessor commonDependencies.dagger2Compiler
+
+    testImplementation commonTestDependencies.junit
+    testImplementation commonTestDependencies.assertj
+    testImplementation commonTestDependencies.mockito
 }

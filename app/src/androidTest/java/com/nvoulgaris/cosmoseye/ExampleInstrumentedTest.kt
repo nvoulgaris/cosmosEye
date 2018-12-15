@@ -1,4 +1,4 @@
-package cosmoseye.nvoulgaris.com.cosmoseye
+package com.nvoulgaris.cosmoseye
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
