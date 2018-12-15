@@ -5,6 +5,7 @@ import com.nvoulgaris.cosmoseye.R
 import com.nvoulgaris.cosmoseye.application.CosmosEyeApplication
 import com.nvoulgaris.cosmoseye.base.injection.modules.ActivityModule
 import com.nvoulgaris.cosmoseye.base.presentation.BaseInjectingActivity
+import com.nvoulgaris.cosmoseye.gallery.presentation.GalleryFragment
 import kotlinx.android.synthetic.main.home_activity.*
 import timber.log.Timber
 
@@ -29,10 +30,16 @@ class HomeActivity : BaseInjectingActivity<HomeActivityComponent>() {
         bottom_navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_navigation_apod -> Timber.e("APOD tab")
-                R.id.bottom_navigation_gallery -> Timber.e("Gallery tab")
+                R.id.bottom_navigation_gallery -> showGalleryFragment()
                 R.id.bottom_navigation_mars_rover -> Timber.e("Mars rover tab")
             }
             true
         }
+    }
+
+    private fun showGalleryFragment() {
+        supportFragmentManager.beginTransaction()
+            .add(R.id.home_fragment, GalleryFragment())
+            .commit()
     }
 }
