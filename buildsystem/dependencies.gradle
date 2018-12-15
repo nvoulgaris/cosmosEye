@@ -13,6 +13,7 @@ ext {
     picasso = '2.5.2'
     okHttp = '3.12.0'
     retrofit2 = '2.5.0'
+    timber = '4.7.1'
 
     junit = '4.12'
     mockito = '2.23.4'
@@ -36,6 +37,8 @@ ext {
             retrofit2                       : "com.squareup.retrofit2:retrofit:${retrofit2}",
             retrofitRxAdapter               : "com.squareup.retrofit2:adapter-rxjava2:${retrofit2}",
             retrofitConverter               : "com.squareup.retrofit2:converter-gson:${retrofit2}",
+
+            timber                          : "com.jakewharton.timber:timber:${timber}",
 
             roomRuntime                     : "android.arch.persistence.room:runtime:${room}",
             roomCompiler                    : "android.arch.persistence.room:compiler:${room}",

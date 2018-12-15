@@ -33,6 +33,13 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    api commonDependencies.supportV13
+    api commonDependencies.supportAnnotation
+    api commonDependencies.supportRecyclerView
+    api commonDependencies.supportDesign
+
+    implementation commonDependencies.timber
+
     implementation commonDependencies.dagger2
     kapt commonDependencies.dagger2Compiler
     testAnnotationProcessor commonDependencies.dagger2Compiler
