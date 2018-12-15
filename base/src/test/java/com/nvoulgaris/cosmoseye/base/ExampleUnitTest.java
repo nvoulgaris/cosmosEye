@@ -1,4 +1,4 @@
-package com.nvoulgaris.cosmoseye;
+package com.nvoulgaris.cosmoseye.base;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.nvoulgaris.cosmoseye;
+package com.nvoulgaris.cosmoseye.gallery;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     def androidVersions = rootProject.ext.android
@@ -30,8 +31,10 @@ dependencies {
     implementation project(':base')
     implementation project(':gallery')
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     implementation commonDependencies.dagger2
-    annotationProcessor commonDependencies.dagger2Compiler
+    kapt commonDependencies.dagger2Compiler
     testAnnotationProcessor commonDependencies.dagger2Compiler
 
     testImplementation commonTestDependencies.junit

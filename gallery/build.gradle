@@ -1,11 +1,12 @@
 apply plugin: 'com.android.feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     def androidVersions = rootProject.ext.android
 
     compileSdkVersion androidVersions.compileSdkVersion
     buildToolsVersion androidVersions.buildToolsVersion
-
 
     defaultConfig {
         minSdkVersion androidVersions.minSdkVersion
@@ -17,6 +18,8 @@ dependencies {
     def commonTestDependencies = rootProject.ext.commonTestDependencies
 
     implementation project(':base')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     testImplementation commonTestDependencies.junit
     testImplementation commonTestDependencies.assertj
