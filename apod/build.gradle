@@ -8,39 +8,20 @@ android {
     compileSdkVersion androidVersions.compileSdkVersion
     buildToolsVersion androidVersions.buildToolsVersion
 
-    baseFeature true
-
     defaultConfig {
         minSdkVersion androidVersions.minSdkVersion
         targetSdkVersion androidVersions.targetSdkVersion
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
 }
 
 dependencies {
-    def commonDependencies = rootProject.ext.commonDependencies
     def commonTestDependencies = rootProject.ext.commonTestDependencies
 
-    api 'com.android.support:appcompat-v7:28.0.0'
-    application project(':app')
-    feature project(":gallery")
+    implementation project(':base')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-    api commonDependencies.supportAppCompatV7
-
-    api commonDependencies.dagger2
-    kapt commonDependencies.dagger2Compiler
-    testAnnotationProcessor commonDependencies.dagger2Compiler
 
     testImplementation commonTestDependencies.junit
     testImplementation commonTestDependencies.assertj
     testImplementation commonTestDependencies.mockito
-    feature project(":apod")
 }

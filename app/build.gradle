@@ -30,6 +30,7 @@ dependencies {
 
     implementation project(':base')
     implementation project(':gallery')
+    implementation project(':apod')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
