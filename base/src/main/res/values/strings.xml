@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Base</string>
+
+    <string name="gallery_search_hint">Search for … (e.g. "Orion") </string>
 </resources>

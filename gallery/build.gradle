@@ -1,5 +1,6 @@
 apply plugin: 'com.android.feature'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -15,11 +16,23 @@ android {
 }
 
 dependencies {
+    def commonDependencies = rootProject.ext.commonDependencies
     def commonTestDependencies = rootProject.ext.commonTestDependencies
 
     implementation project(':base')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    api commonDependencies.supportV13
+    api commonDependencies.supportAnnotation
+    api commonDependencies.supportRecyclerView
+    api commonDependencies.supportDesign
+
+    implementation commonDependencies.timber
+
+    implementation commonDependencies.dagger2
+    kapt commonDependencies.dagger2Compiler
+    testAnnotationProcessor commonDependencies.dagger2Compiler
 
     testImplementation commonTestDependencies.junit
     testImplementation commonTestDependencies.assertj

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CosmosEye</string>
 
-    <string name="bottom_navigation_apod">APOD</string>
+    <string name="bottom_navigation_apod">Today\'s picture</string>
     <string name="bottom_navigation_gallery">Gallery</string>
     <string name="bottom_navigation_mars_rover">Mars Rover</string>
 
