@@ -14,6 +14,8 @@ ext {
     okHttp = '3.12.0'
     retrofit2 = '2.5.0'
     timber = '4.7.1'
+    archViewmodel = '1.1.1'
+    archExtensions = '1.1.1'
 
     junit = '4.12'
     mockito = '2.23.4'
@@ -39,6 +41,9 @@ ext {
             retrofitConverter               : "com.squareup.retrofit2:converter-gson:${retrofit2}",
 
             timber                          : "com.jakewharton.timber:timber:${timber}",
+
+            archExtensions                  : "android.arch.lifecycle:extensions:${archExtensions}",
+            archViewmodel                   : "android.arch.lifecycle:viewmodel:${archViewmodel}",
 
             roomRuntime                     : "android.arch.persistence.room:runtime:${room}",
             roomCompiler                    : "android.arch.persistence.room:compiler:${room}",
