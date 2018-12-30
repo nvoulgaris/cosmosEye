@@ -30,6 +30,16 @@ dependencies {
     api commonDependencies.supportRecyclerView
     api commonDependencies.supportDesign
 
+    api commonDependencies.moshi
+
+    api commonDependencies.retrofit2
+    api commonDependencies.retrofitRxAdapter
+    api commonDependencies.retrofitConverter
+
+    implementation commonDependencies.rxJava
+    implementation commonDependencies.rxJavaAndroid
+    implementation commonDependencies.rxKotlin
+
     implementation commonDependencies.timber
 
     implementation commonDependencies.dagger2
