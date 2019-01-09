@@ -35,6 +35,7 @@ dependencies {
     api commonDependencies.retrofit2
     api commonDependencies.retrofitRxAdapter
     api commonDependencies.retrofitConverter
+    api commonDependencies.okHttpInterceptor
 
     implementation commonDependencies.rxJava
     implementation commonDependencies.rxJavaAndroid

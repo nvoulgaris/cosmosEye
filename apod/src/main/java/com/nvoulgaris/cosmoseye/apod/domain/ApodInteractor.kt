@@ -6,5 +6,5 @@ import javax.inject.Inject
 
 class ApodInteractor @Inject constructor(private val repository: ApodRepository) {
 
-    fun dataStream(): Flowable<List<ApodDb>> = repository.apod()
+    fun dataStream(): Flowable<ApodDb> = repository.apod()
 }

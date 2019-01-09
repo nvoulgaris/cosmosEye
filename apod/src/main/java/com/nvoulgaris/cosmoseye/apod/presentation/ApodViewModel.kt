@@ -15,7 +15,7 @@ class ApodViewModel @Inject constructor(
 ) : ViewModel() {
 
     val compositeDisposable: CompositeDisposable = CompositeDisposable()
-    val liveData: MutableLiveData<List<Apod>> = MutableLiveData()
+    val liveData: MutableLiveData<Apod> = MutableLiveData()
 
     init {
         compositeDisposable.add(bindToInteractor())

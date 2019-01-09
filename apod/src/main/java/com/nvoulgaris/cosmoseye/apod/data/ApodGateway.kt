@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface ApodGateway {
 
-    @get:GET()
-    val apod: Single<List<ApodRaw>>
+    @get:GET("planetary/apod")
+    val apod: Single<ApodRaw>
 }
