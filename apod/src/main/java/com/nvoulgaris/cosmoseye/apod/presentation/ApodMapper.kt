@@ -10,7 +10,7 @@ class ApodMapper @Inject constructor() : Function<ApodDb, Apod> {
         apodDb.copyright,
         apodDb.date,
         apodDb.explanation,
-        apodDb.hdurl,
+        apodDb.hdUrl,
         apodDb.mediaType,
         apodDb.serviceVersion,
         apodDb.title,

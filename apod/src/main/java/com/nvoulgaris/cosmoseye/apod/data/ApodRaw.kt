@@ -7,7 +7,7 @@ data class ApodRaw(
     val date: String,
     val explanation: String,
     @Json(name = "hdurl")
-    val hdurl: String,
+    val hdUrl: String,
     @Json(name = "media_type")
     val mediaType: String,
     @Json(name = "service_version")

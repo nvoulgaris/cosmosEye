@@ -1,6 +1,8 @@
 package com.nvoulgaris.cosmoseye.application
 
 import com.nvoulgaris.cosmoseye.apod.data.ApodGateway
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -23,10 +25,17 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApi(client: OkHttpClient): Retrofit {
+    fun providesMoshi() =
+        Moshi.Builder()
+            .add(KotlinJsonAdapterFactory())
+            .build()
+
+    @Provides
+    @Singleton
+    fun provideApi(client: OkHttpClient, moshi: Moshi): Retrofit {
         return Retrofit.Builder()
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(client)
             .baseUrl(BASE_URL)
             .build()
@@ -35,7 +44,7 @@ class NetworkModule {
     @Provides
     @Singleton
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
-        val interceptor =  HttpLoggingInterceptor()
+        val interceptor = HttpLoggingInterceptor()
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         return interceptor
     }
