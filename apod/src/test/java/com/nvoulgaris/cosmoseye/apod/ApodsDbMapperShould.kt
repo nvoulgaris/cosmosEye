@@ -1,13 +1,15 @@
 package com.nvoulgaris.cosmoseye.apod
 
 import com.nvoulgaris.cosmoseye.apod.domain.ApodDbMapper
+import com.nvoulgaris.cosmoseye.apod.domain.ApodsDbMapper
 import com.nvoulgaris.cosmoseye.apod.mocks.MockedApods
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-class ApodDbMapperShould {
+class ApodsDbMapperShould {
 
-    private val mapper = ApodDbMapper()
+    private val apodDbMapper = ApodDbMapper()
+    private val mapper = ApodsDbMapper(apodDbMapper)
 
     private val apodRaw1 = MockedApods.apodRaw1
     private val apodRaw2 = MockedApods.apodRaw2
