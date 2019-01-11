@@ -8,9 +8,7 @@ import dagger.Subcomponent
 
 @ActivityScope
 @Subcomponent(modules = [ActivityModule::class])
-interface HomeActivityComponent :
-    GalleryComponent.GalleryComponentCreator,
-    ApodComponent.ApodComponentCreator {
+interface HomeActivityComponent : GalleryComponent.GalleryComponentCreator, ApodComponent.ApodComponentCreator {
 
     fun inject(homeActivity: HomeActivity)
 }

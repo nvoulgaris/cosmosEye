@@ -1,6 +1,7 @@
 package com.nvoulgaris.cosmoseye.apod.domain
 
 import com.nvoulgaris.cosmoseye.apod.data.ApodRaw
+import com.nvoulgaris.cosmoseye.base.data.ApodDb
 import io.reactivex.functions.Function
 import javax.inject.Inject
 

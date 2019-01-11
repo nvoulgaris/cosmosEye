@@ -17,7 +17,10 @@ class CosmosEyeApplication : Application() {
     }
 
     fun getComponent(): ApplicationComponent =
-        component ?: DaggerApplicationComponent.builder().application(this).build()
+        component ?: DaggerApplicationComponent.builder()
+            .application(this)
+            .context(this)
+            .build()
 
     private fun configureLogging() {
         if (BuildConfig.DEBUG)

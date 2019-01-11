@@ -1,13 +1,15 @@
 package com.nvoulgaris.cosmoseye.application
 
+import android.content.Context
 import com.nvoulgaris.cosmoseye.base.injection.modules.ActivityModule
 import com.nvoulgaris.cosmoseye.home.presentation.HomeActivityComponent
 import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [ViewModelModule::class, NetworkModule::class])
+@Component(modules = [NetworkModule::class, ViewModelModule::class, DataModule::class])
 interface ApplicationComponent {
 
     fun inject(app: CosmosEyeApplication)
@@ -19,6 +21,9 @@ interface ApplicationComponent {
 
         @BindsInstance
         fun application(app: CosmosEyeApplication): Builder
+
+        @BindsInstance
+        fun context(@Named("appContext") context: Context): Builder
 
         fun build(): ApplicationComponent
     }

@@ -32,6 +32,10 @@ dependencies {
 
     api commonDependencies.moshi
 
+    implementation commonDependencies.roomRuntime
+    kapt commonDependencies.roomCompiler
+    implementation commonDependencies.roomRxJava
+
     api commonDependencies.retrofit2
     api commonDependencies.retrofitRxAdapter
     api commonDependencies.retrofitConverter

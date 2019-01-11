@@ -14,6 +14,7 @@ ext {
     okHttp = '3.12.0'
     retrofit2 = '2.5.0'
     moshi = '1.8.0'
+    room = '1.1.0'
     timber = '4.7.1'
     archViewmodel = '1.1.1'
     archExtensions = '1.1.1'
@@ -44,6 +45,11 @@ ext {
             retrofitRxAdapter               : "com.squareup.retrofit2:adapter-rxjava2:${retrofit2}",
             retrofitConverter               : "com.squareup.retrofit2:converter-moshi:${retrofit2}",
             moshi                           : "com.squareup.moshi:moshi-kotlin:${moshi}",
+
+            roomRuntime                     : "android.arch.persistence.room:runtime:${room}",
+            roomCompiler                    : "android.arch.persistence.room:compiler:${room}",
+            roomRxJava                      : "android.arch.persistence.room:rxjava2:${room}",
+            roomTesting                     : "android.arch.persistence.room:testing:${room}",
 
             timber                          : "com.jakewharton.timber:timber:${timber}",
 

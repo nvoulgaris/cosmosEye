@@ -1,7 +1,10 @@
 package com.nvoulgaris.cosmoseye.apod.presentation
 
+import com.nvoulgaris.cosmoseye.apod.data.ApodGateway
 import com.nvoulgaris.cosmoseye.apod.data.ApodRepository
+import com.nvoulgaris.cosmoseye.apod.domain.ApodDbMapper
 import com.nvoulgaris.cosmoseye.apod.domain.ApodInteractor
+import com.nvoulgaris.cosmoseye.base.data.ApodDao
 import com.nvoulgaris.cosmoseye.base.injection.scopes.FragmentScope
 import dagger.Module
 import dagger.Provides
@@ -11,7 +14,10 @@ class ApodModule {
 
     @Provides
     @FragmentScope
-    fun provideInteractor(repository: ApodRepository): ApodInteractor {
-        return ApodInteractor(repository)
-    }
+    fun provideInteractor(repository: ApodRepository): ApodInteractor = ApodInteractor(repository)
+
+    @Provides
+    @FragmentScope
+    fun provideRepository(dao: ApodDao, mapper: ApodDbMapper, gateway: ApodGateway): ApodRepository =
+        ApodRepository(dao, mapper, gateway)
 }

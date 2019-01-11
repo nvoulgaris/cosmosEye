@@ -43,6 +43,10 @@ dependencies {
     implementation commonDependencies.rxJavaAndroid
     implementation commonDependencies.rxKotlin
 
+    implementation commonDependencies.roomRuntime
+    kapt commonDependencies.roomCompiler
+    implementation commonDependencies.roomRxJava
+
     implementation commonDependencies.timber
 
     implementation commonDependencies.dagger2
