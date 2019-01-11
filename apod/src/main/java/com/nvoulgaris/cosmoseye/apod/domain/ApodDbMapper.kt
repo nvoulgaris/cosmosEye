@@ -8,13 +8,13 @@ import javax.inject.Inject
 class ApodDbMapper @Inject constructor() : Function<ApodRaw, ApodDb> {
 
     override fun apply(apodRaw: ApodRaw): ApodDb = ApodDb(
-        copyright = apodRaw.copyright,
-        date = apodRaw.date,
-        explanation = apodRaw.explanation,
-        hdUrl = apodRaw.hdUrl,
-        mediaType = apodRaw.mediaType,
-        serviceVersion = apodRaw.serviceVersion,
-        title = apodRaw.title,
-        url = apodRaw.url
+        apodRaw.copyright,
+        apodRaw.date,
+        apodRaw.explanation,
+        apodRaw.hdUrl,
+        apodRaw.mediaType,
+        apodRaw.serviceVersion,
+        apodRaw.title,
+        apodRaw.url
     )
 }

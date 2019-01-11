@@ -11,11 +11,12 @@ import javax.inject.Inject
 
 class ApodViewModel @Inject constructor(
     private val interactor: ApodInteractor,
-    private val mapper: ApodMapper
+    private val mapper: ApodsMapper
 ) : ViewModel() {
 
-    val compositeDisposable: CompositeDisposable = CompositeDisposable()
-    val liveData: MutableLiveData<Apod> = MutableLiveData()
+    val liveData: MutableLiveData<List<Apod>> = MutableLiveData()
+
+    private val compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     init {
         compositeDisposable.add(bindToInteractor())

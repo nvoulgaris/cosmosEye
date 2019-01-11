@@ -5,9 +5,8 @@ import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = DbConstants.APOD_TABLE_NAME)
 data class ApodDb(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val copyright: String,
-    val date: String,
+    @PrimaryKey val date: String,
     val explanation: String,
     val hdUrl: String,
     val mediaType: String,

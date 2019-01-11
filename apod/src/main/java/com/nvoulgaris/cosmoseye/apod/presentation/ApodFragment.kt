@@ -1,11 +1,13 @@
 package com.nvoulgaris.cosmoseye.apod.presentation
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import com.nvoulgaris.cosmoseye.apod.R
 import com.nvoulgaris.cosmoseye.base.presentation.BaseInjectingActivity
 import com.nvoulgaris.cosmoseye.base.presentation.BaseInjectingFragment
+import timber.log.Timber
 import javax.inject.Inject
 
 class ApodFragment : BaseInjectingFragment() {
@@ -24,5 +26,12 @@ class ApodFragment : BaseInjectingFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val viewModel = ViewModelProviders.of(this, viewModelFactory).get(ApodViewModel::class.java)
+        viewModel.liveData.observe(this, Observer<List<Apod>> { apod ->
+            updateUi(apod)
+        })
+    }
+
+    private fun updateUi(apod: List<Apod>?) {
+        Timber.e("Received APOD: $apod")
     }
 }
