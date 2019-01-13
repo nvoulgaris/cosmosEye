@@ -1,8 +1,8 @@
 package com.nvoulgaris.cosmoseye.apod.mocks
 
 import com.nvoulgaris.cosmoseye.apod.data.ApodRaw
-import com.nvoulgaris.cosmoseye.apod.domain.ApodDb
 import com.nvoulgaris.cosmoseye.apod.presentation.Apod
+import com.nvoulgaris.cosmoseye.base.data.ApodDb
 
 class MockedApods {
 
