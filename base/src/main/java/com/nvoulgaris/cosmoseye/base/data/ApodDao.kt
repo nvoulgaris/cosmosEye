@@ -15,6 +15,9 @@ abstract class ApodDao {
     @Query("SELECT * FROM ${DbConstants.APOD_TABLE_NAME}")
     abstract fun dataStream(): Flowable<List<ApodDb>>
 
+    @Query("SELECT * FROM ${DbConstants.APOD_TABLE_NAME} WHERE date LIKE :date")
+    abstract fun pictureBy(date: String): Flowable<List<ApodDb>>
+
     @Query("DELETE FROM ${DbConstants.APOD_TABLE_NAME}")
     abstract fun nuke()
 }

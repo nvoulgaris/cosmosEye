@@ -17,7 +17,22 @@ class ApodRepository @Inject constructor(
     fun dataStream(): Flowable<List<ApodDb>> = dao.dataStream()
         .mergeWith(apod())
 
+    fun pictureBy(date: String): Flowable<List<ApodDb>> = dao.pictureBy(date)
+        .mergeWith(apodBy(date))
+
     private fun apod(): Flowable<List<ApodDb>> = gateway.apod
+        .subscribeOn(Schedulers.io())
+        .map { apod -> listOf(apod) }
+        .map(mapper)
+        .doOnSuccess { data ->
+            dao.insert(data)
+        }
+        .doOnError { e ->
+            Timber.e(e, "Request failed: ")
+        }
+        .toFlowable()
+
+    private fun apodBy(date: String): Flowable<List<ApodDb>> = gateway.apodBy(date)
         .subscribeOn(Schedulers.io())
         .map { apod -> listOf(apod) }
         .map(mapper)
