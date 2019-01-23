@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/food_log_result_root"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:weightSum="1"
+    android:gravity="center_vertical"
+    android:background="@drawable/almost_white_gray_bottom_border"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/gallery_search_suggestion_name"
+        style="@style/large_text"
+        android:layout_width="0dp"
+        android:layout_weight="0.8"
+        android:layout_marginStart="14dp"
+        android:singleLine="true"
+        android:text="Orion stars"/>
+
+    <ImageView
+        android:id="@+id/gallery_search_suggestion_go"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_marginEnd="14dp"
+        android:src="@drawable/ic_arrow_forward_black" />
+
+</LinearLayout>

@@ -21,6 +21,8 @@ ext {
     rxJava = '2.2.4'
     rxJavaAndroid = '2.1.0'
     rxKotlin = '2.3.0'
+    epoxy = '2.9.0'
+    butterknife = '8.8.1'
 
     junit = '4.12'
     mockito = '2.23.4'
@@ -62,9 +64,10 @@ ext {
             rxJavaAndroid                   : "io.reactivex.rxjava2:rxandroid:${rxJavaAndroid}",
             rxKotlin                        : "io.reactivex.rxjava2:rxkotlin:${rxKotlin}",
 
-            roomRuntime                     : "android.arch.persistence.room:runtime:${room}",
-            roomCompiler                    : "android.arch.persistence.room:compiler:${room}",
-            roomTesting                     : "android.arch.persistence.room:testing:${room}",
+            epoxy                           : "com.airbnb.android:epoxy:${epoxy}",
+            epoxyProcessor                 : "com.airbnb.android:epoxy-processor:${epoxy}",
+            butterknife                     : "com.jakewharton:butterknife:${butterknife}",
+            butterknifeCompiler             : "com.jakewharton:butterknife-compiler:${butterknife}"
     ]
 
     commonTestDependencies = [

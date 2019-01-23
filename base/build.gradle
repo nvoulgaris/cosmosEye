@@ -40,9 +40,16 @@ dependencies {
     kapt commonDependencies.dagger2Compiler
     testAnnotationProcessor commonDependencies.dagger2Compiler
 
+    api commonDependencies.supportV13
+    api commonDependencies.supportAnnotation
+    api commonDependencies.supportRecyclerView
+    api commonDependencies.supportDesign
+
     implementation commonDependencies.roomRuntime
     kapt commonDependencies.roomCompiler
     implementation commonDependencies.roomRxJava
+
+    implementation commonDependencies.timber
 
     testImplementation commonTestDependencies.junit
     testImplementation commonTestDependencies.assertj
