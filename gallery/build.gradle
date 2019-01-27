@@ -27,6 +27,8 @@ dependencies {
     kapt commonDependencies.dagger2Compiler
     testAnnotationProcessor commonDependencies.dagger2Compiler
 
+    implementation commonDependencies.timber
+
     implementation commonDependencies.epoxy
     kapt commonDependencies.epoxyProcessor
     implementation commonDependencies.butterknife

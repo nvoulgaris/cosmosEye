@@ -8,6 +8,7 @@ import com.nvoulgaris.cosmoseye.base.presentation.BaseInjectingActivity
 import com.nvoulgaris.cosmoseye.base.presentation.BaseInjectingFragment
 import com.nvoulgaris.cosmoseye.gallery.presentation.epoxy.GallerySuggestionsRecyclerController
 import kotlinx.android.synthetic.main.gallery_fragment.*
+import timber.log.Timber
 
 class GalleryFragment : BaseInjectingFragment() {
 
@@ -25,7 +26,7 @@ class GalleryFragment : BaseInjectingFragment() {
     }
 
     private fun addRecyclerController() {
-        recyclerController = GallerySuggestionsRecyclerController()
+        recyclerController = GallerySuggestionsRecyclerController { suggestion -> submitSearchListener(suggestion) }
         gallery_search_suggestions.setController(recyclerController)
     }
 
@@ -50,8 +51,14 @@ class GalleryFragment : BaseInjectingFragment() {
 
             private fun suggestionsMatching(query: String) = historySuggestions.filter { matching(it, query) }
 
-            private fun matching(suggestion: SearchSuggestion, query: String) = suggestion.name.startsWith(query, ignoreCase = true)
+            private fun matching(suggestion: SearchSuggestion, query: String) =
+                suggestion.name.startsWith(query, ignoreCase = true)
         })
+    }
+
+    private fun submitSearchListener(suggestion: SearchSuggestion) {
+        Timber.e("Search for ${suggestion.name}")
+        SearchResultsFragment.makeWith(suggestion.name)
     }
 
     override fun onInject() {
