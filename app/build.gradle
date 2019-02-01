@@ -29,10 +29,11 @@ dependencies {
     def commonTestDependencies = rootProject.ext.commonTestDependencies
 
     implementation project(':base')
-    implementation project(':gallery')
-    implementation project(':apod')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation commonDependencies.archViewmodel
+    implementation commonDependencies.archExtensions
 
     api commonDependencies.supportV13
     api commonDependencies.supportAnnotation
@@ -43,17 +44,30 @@ dependencies {
     implementation commonDependencies.rxJavaAndroid
     implementation commonDependencies.rxKotlin
 
-    implementation commonDependencies.roomRuntime
-    kapt commonDependencies.roomCompiler
-    implementation commonDependencies.roomRxJava
-
     implementation commonDependencies.timber
+
+    implementation commonDependencies.epoxy
+    kapt commonDependencies.epoxyProcessor
+    implementation commonDependencies.butterknife
+    annotationProcessor commonDependencies.butterknifeCompiler
 
     implementation commonDependencies.dagger2
     kapt commonDependencies.dagger2Compiler
     testAnnotationProcessor commonDependencies.dagger2Compiler
 
+    api commonDependencies.retrofit2
+    api commonDependencies.retrofitRxAdapter
+    api commonDependencies.retrofitConverter
+    api commonDependencies.okHttpInterceptor
+
+    api commonDependencies.moshi
+
+    implementation commonDependencies.roomRuntime
+    kapt commonDependencies.roomCompiler
+    implementation commonDependencies.roomRxJava
+
     testImplementation commonTestDependencies.junit
     testImplementation commonTestDependencies.assertj
     testImplementation commonTestDependencies.mockito
+    testImplementation commonTestDependencies.coreTesting
 }

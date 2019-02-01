@@ -1,1 +1,1 @@
-include ':app', ':base', ':gallery', ':apod'
+include ':app', ':base'

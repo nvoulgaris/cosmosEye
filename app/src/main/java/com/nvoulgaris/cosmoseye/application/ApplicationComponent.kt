@@ -2,7 +2,7 @@ package com.nvoulgaris.cosmoseye.application
 
 import android.content.Context
 import com.nvoulgaris.cosmoseye.base.injection.modules.ActivityModule
-import com.nvoulgaris.cosmoseye.home.presentation.HomeActivityComponent
+import com.nvoulgaris.cosmoseye.features.home.presentation.HomeActivityComponent
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named

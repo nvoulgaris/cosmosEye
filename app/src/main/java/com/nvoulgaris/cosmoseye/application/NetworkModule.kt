@@ -1,6 +1,6 @@
 package com.nvoulgaris.cosmoseye.application
 
-import com.nvoulgaris.cosmoseye.apod.data.ApodGateway
+import com.nvoulgaris.cosmoseye.features.apod.data.ApodGateway
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
