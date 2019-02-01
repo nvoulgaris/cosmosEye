@@ -7,8 +7,8 @@ import com.nvoulgaris.cosmoseye.R
 import com.nvoulgaris.cosmoseye.base.presentation.BaseInjectingActivity
 import com.nvoulgaris.cosmoseye.base.presentation.BaseInjectingFragment
 import com.nvoulgaris.cosmoseye.features.gallery.presentation.epoxy.GallerySuggestionsRecyclerController
+import com.nvoulgaris.cosmoseye.features.home.presentation.HomeActivity
 import kotlinx.android.synthetic.main.gallery_fragment.*
-import timber.log.Timber
 
 class GalleryFragment : BaseInjectingFragment() {
 
@@ -26,14 +26,12 @@ class GalleryFragment : BaseInjectingFragment() {
     }
 
     private fun addRecyclerController() {
-        recyclerController =
-            GallerySuggestionsRecyclerController { suggestion ->
-                submitSearchListener(suggestion)
-            }
+        recyclerController = GallerySuggestionsRecyclerController { suggestion -> submitSearchListener(suggestion) }
         gallery_search_suggestions.setController(recyclerController)
     }
 
     private fun addSearchView() {
+        showKeyboard()
         gallery_search_view.requestFocus()
         gallery_search_view.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
 
@@ -60,8 +58,9 @@ class GalleryFragment : BaseInjectingFragment() {
     }
 
     private fun submitSearchListener(suggestion: SearchSuggestion) {
-        Timber.e("Search for ${suggestion.name}")
-        SearchResultsFragment.makeWith(suggestion.name)
+        hideKeyboard()
+        val fragment = SearchResultsFragment.makeWith(suggestion.name)
+        (activity as HomeActivity).flipOpen(fragment)
     }
 
     override fun onInject() {
