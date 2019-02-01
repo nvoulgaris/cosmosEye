@@ -2,7 +2,7 @@ package com.nvoulgaris.cosmoseye.features.apod
 
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodDbMapper
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodsDbMapper
-import com.nvoulgaris.cosmoseye.features.apod.mocks.MockedApods
+import com.nvoulgaris.cosmoseye.features.mocks.MockedApods
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 

@@ -4,7 +4,7 @@ import com.nvoulgaris.cosmoseye.features.apod.data.ApodGateway
 import com.nvoulgaris.cosmoseye.features.apod.data.ApodRepository
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodInteractor
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodsDbMapper
-import com.nvoulgaris.cosmoseye.base.data.ApodDao
+import com.nvoulgaris.cosmoseye.base.data.apod.ApodDao
 import com.nvoulgaris.cosmoseye.base.injection.scopes.FragmentScope
 import dagger.Module
 import dagger.Provides

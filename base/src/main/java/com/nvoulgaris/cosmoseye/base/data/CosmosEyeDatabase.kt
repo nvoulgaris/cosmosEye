@@ -4,6 +4,8 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
+import com.nvoulgaris.cosmoseye.base.data.apod.ApodDao
+import com.nvoulgaris.cosmoseye.base.data.apod.ApodDb
 
 @Database(entities = [ApodDb::class], version = 1)
 abstract class CosmosEyeDatabase : RoomDatabase() {

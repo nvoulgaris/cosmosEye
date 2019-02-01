@@ -1,40 +1,30 @@
 package com.nvoulgaris.cosmoseye.features.apod
 
-import android.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
+import com.nvoulgaris.cosmoseye.base.data.apod.ApodDao
 import com.nvoulgaris.cosmoseye.features.apod.data.ApodGateway
 import com.nvoulgaris.cosmoseye.features.apod.data.ApodRaw
 import com.nvoulgaris.cosmoseye.features.apod.data.ApodRepository
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodDbMapper
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodInteractor
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodsDbMapper
-import com.nvoulgaris.cosmoseye.features.apod.infrastructure.RxMockSchedulersRule
-import com.nvoulgaris.cosmoseye.features.apod.mocks.MockedApods
 import com.nvoulgaris.cosmoseye.features.apod.presentation.ApodMapper
 import com.nvoulgaris.cosmoseye.features.apod.presentation.ApodViewModel
 import com.nvoulgaris.cosmoseye.features.apod.presentation.ApodsMapper
-import com.nvoulgaris.cosmoseye.base.data.ApodDao
+import com.nvoulgaris.cosmoseye.features.infrastructure.BaseTest
+import com.nvoulgaris.cosmoseye.features.mocks.MockedApods
 import io.reactivex.Flowable
 import io.reactivex.Single
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
-import org.junit.rules.TestRule
 
-class ApodShould {
-
-    @Rule
-    @JvmField
-    val immediateSchedulerRule = RxMockSchedulersRule()
-
-    @Rule
-    @JvmField
-    val rule: TestRule = InstantTaskExecutorRule()
+class ApodShould : BaseTest() {
 
     private val ex = RuntimeException()
 
+    private lateinit var viewModel: ApodViewModel
     private val dao: ApodDao = mock()
     private val gateway: ApodGateway = mock()
     private val apodDbMapper = ApodDbMapper()
@@ -43,14 +33,11 @@ class ApodShould {
     private val interactor = ApodInteractor(repository)
     private val apodMapper = ApodMapper()
     private val mapper = ApodsMapper(apodMapper)
-    private lateinit var viewModel: ApodViewModel
 
     private val rawPicture: ApodRaw = MockedApods.apodRaw1
     private val dbPictures = listOf(MockedApods.apodDb2)
-    private val pictureFromNetwork = MockedApods.apod1
-    private val pictureFromDb = MockedApods.apod2
-    private val picturesFromNetwork = listOf(pictureFromNetwork)
-    private val picturesFromDb = listOf(pictureFromDb)
+    private val picturesFromNetwork = listOf(MockedApods.apod1)
+    private val picturesFromDb = listOf(MockedApods.apod2)
 
     @Before
     fun setup() {

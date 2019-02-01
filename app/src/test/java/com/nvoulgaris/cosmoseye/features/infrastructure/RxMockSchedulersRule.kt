@@ -1,4 +1,4 @@
-package com.nvoulgaris.cosmoseye.features.apod.infrastructure
+package com.nvoulgaris.cosmoseye.features.infrastructure
 
 import io.reactivex.Scheduler
 import io.reactivex.android.plugins.RxAndroidPlugins

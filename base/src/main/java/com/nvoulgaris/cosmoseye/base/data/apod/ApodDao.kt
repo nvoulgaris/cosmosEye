@@ -1,9 +1,10 @@
-package com.nvoulgaris.cosmoseye.base.data
+package com.nvoulgaris.cosmoseye.base.data.apod
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy
 import android.arch.persistence.room.Query
+import com.nvoulgaris.cosmoseye.base.data.DbConstants
 import io.reactivex.Flowable
 
 @Dao

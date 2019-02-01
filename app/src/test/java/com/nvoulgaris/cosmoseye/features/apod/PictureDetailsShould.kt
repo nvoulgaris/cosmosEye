@@ -9,12 +9,12 @@ import com.nvoulgaris.cosmoseye.features.apod.data.ApodRepository
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodDbMapper
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodsDbMapper
 import com.nvoulgaris.cosmoseye.features.apod.domain.PictureDetailsInteractor
-import com.nvoulgaris.cosmoseye.features.apod.infrastructure.RxMockSchedulersRule
-import com.nvoulgaris.cosmoseye.features.apod.mocks.MockedApods
+import com.nvoulgaris.cosmoseye.features.infrastructure.RxMockSchedulersRule
+import com.nvoulgaris.cosmoseye.features.mocks.MockedApods
 import com.nvoulgaris.cosmoseye.features.apod.presentation.ApodMapper
 import com.nvoulgaris.cosmoseye.features.apod.presentation.ApodsMapper
 import com.nvoulgaris.cosmoseye.features.apod.presentation.PictureDetailsViewModel
-import com.nvoulgaris.cosmoseye.base.data.ApodDao
+import com.nvoulgaris.cosmoseye.base.data.apod.ApodDao
 import io.reactivex.Flowable
 import io.reactivex.Single
 import org.assertj.core.api.Assertions.assertThat

@@ -1,8 +1,8 @@
 package com.nvoulgaris.cosmoseye.features.apod.data
 
+import com.nvoulgaris.cosmoseye.base.data.apod.ApodDao
+import com.nvoulgaris.cosmoseye.base.data.apod.ApodDb
 import com.nvoulgaris.cosmoseye.features.apod.domain.ApodsDbMapper
-import com.nvoulgaris.cosmoseye.base.data.ApodDao
-import com.nvoulgaris.cosmoseye.base.data.ApodDb
 import io.reactivex.Flowable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber

@@ -1,7 +1,7 @@
 package com.nvoulgaris.cosmoseye.features.apod.domain
 
 import com.nvoulgaris.cosmoseye.features.apod.data.ApodRepository
-import com.nvoulgaris.cosmoseye.base.data.ApodDb
+import com.nvoulgaris.cosmoseye.base.data.apod.ApodDb
 import io.reactivex.Flowable
 import javax.inject.Inject
 

@@ -3,7 +3,6 @@ package com.nvoulgaris.cosmoseye.features.gallery.presentation
 import android.os.Bundle
 import com.nvoulgaris.cosmoseye.R
 import com.nvoulgaris.cosmoseye.base.presentation.BaseInjectingFragment
-import timber.log.Timber
 
 class SearchResultsFragment : BaseInjectingFragment() {
 
@@ -11,12 +10,7 @@ class SearchResultsFragment : BaseInjectingFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        query = arguments!!.getString(
-            QUERY,
-            DEFAULT_QUERY
-        )
-        Timber.e("Query: $query")
+        query = arguments!!.getString(QUERY, DEFAULT_QUERY)
     }
 
     override fun onInject() {

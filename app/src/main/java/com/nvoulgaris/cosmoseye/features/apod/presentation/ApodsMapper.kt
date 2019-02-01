@@ -1,6 +1,6 @@
 package com.nvoulgaris.cosmoseye.features.apod.presentation
 
-import com.nvoulgaris.cosmoseye.base.data.ApodDb
+import com.nvoulgaris.cosmoseye.base.data.apod.ApodDb
 import io.reactivex.functions.Function
 import javax.inject.Inject
 
